@@ -12,7 +12,9 @@ After some data cleaning, the data has provided us with 2261 rows, meaning there
 To clean the dataset, I first took the rows that had all the information I needed. This meant choosing only rows with datacompleteness. After, I filtered the data into all data involving Lee Sin. Next, I wanted the  'gamelength' in the form of a timedelta, so I converted that to the correct datatype. I did the same with 'result' so that it was in the form of booleans. I dropped all the columns with na values as I wasn't interested in any of them and I didn't want to run into any potential errors. Lastly, I calculated a new column called 'ahead' that stored a boolean that is True if the Lee Sin has a gold advantage at 15 minutes ('golddiffat15' is positive). 
 Since there is a lot of data, dropping some of the rows with incomplete data was not a huge issue. Changing the data types allowed me to manipulate them and calculate other values such as 'ahead' with ease. 'ahead' becomes especially useful in my hypothesis testing as I can use it to categorize between matches where Lee Sin was ahead or not at 15 minutes.
 ### Univariate Analysis
+
 <iframe src="assets/LeeSin_Gold_Diff.html" width=800 height=600 frameBorder=0></iframe>
+
 ### Bivariate Analysis
 ### Interesting Aggregate
 
