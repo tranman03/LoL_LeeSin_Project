@@ -25,18 +25,22 @@ Since there is a lot of data, dropping some of the rows with incomplete data was
 
 <iframe src="assets/LeeSin_Gold_Diff.html" width=800 height=600 frameBorder=0></iframe>
 
+This plot shows the distribution of the Gold Difference for Lee Sin players at 15 minutes. The plot is more or less centered around 0, which makes sense because at a pro level it is hard to gain a clear gold advantage over the other team since both teams are playing at a high level.
+
 ### Bivariate Analysis
 
 <iframe src="assets/gold_vs_length.html" width=800 height=600 frameBorder=0></iframe>
 
+This plot compares gold difference at 15 minutes to the game length. We notice a slight negative trend in the data. This could mean that as the gold difference is larger, the games become shorter. This makes sense as the greater the gold difference, the greater the advantage Lee Sin has, and more likely than not Lee Sin will win before a comeback can be made. On the other side, if the game is longer, this means Lee Sin probably wasn't able to take advantage of the early game to secure a quick win and had a smaller  or negative gold difference.
+
 ### Interesting Aggregate
 
-| result   |      False |        True |
-|:---------|-----------:|------------:|
-| False    | 1.1488e+12 | 1.21817e+12 |
-| True     | 1.2256e+12 | 1.12944e+12 |
+| result   |   False |    True |
+|:---------|--------:|--------:|
+| False    | 19.1333 | 20.3    |
+| True     | 20.4167 | 18.8167 |
 
-
+This pivot table holds the value of mean game duration, with the two axises being the game result (win/loss) and ahead (positive/negative gold difference at 15 minutes). As you can see, on average shorter games were when Lee Sin lost and was in a gold deficit, or when Lee Sin won and had a gold advantage. This might suggest that if Lee Sin has gold he will be very successful and the game will end in a win quicker, but conversly, if he is losing and in a gold deficit the game will end a loss quicker.
 
 ## Assessment of Missingness
 
@@ -47,6 +51,14 @@ Looking through the dataset, there does not seem to be any NMAR data. This makes
 <iframe src="assets/redline_missingness.html" width=800 height=600 frameBorder=0></iframe>
 
 <iframe src="assets/missingness.html" width=800 height=600 frameBorder=0></iframe>
+
+Exploring the missing data more, I wanted to see if the missing data in specific areas was specific to the LPL region. I conducted a permutation test to test if the missingness in the first dragon data was linked to the LPL region. 
+
+Null Hypothesis: The missingness of the first dragon data does not depend on if the team is part of the LPL
+
+Alternative Hypothesis: The missingness of the first dragon data is linked to if the team is part of the LPL.
+
+With a = .05 and a p-value = 0, the null was rejected in favor of the alternative hypothesis. As we can see there were no cases where the proportion of missing the data while being in the LPL region was higher than the observed. As we assumed before, this might imply a lot of the missing data, not just first dragon, were due to the specific region. Looking into data regulations in the LPL might provide us with some idea to why this might be.
 
 
 
